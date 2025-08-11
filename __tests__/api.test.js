@@ -36,6 +36,17 @@ describe('User API Endpoints', () => {
     userId = res.body._id; // Save the ID for subsequent tests
   });
 
+  it('should return a list of all users on GET /api/users', async () => {
+    // Ensure there's at least one user to fetch (the one created in the previous test)
+    const res = await request(app).get('/api/users');
+
+    expect(res.statusCode).toEqual(200);
+    expect(Array.isArray(res.body)).toBe(true);
+    expect(res.body.length).toBeGreaterThan(0);
+    expect(res.body[0]).toHaveProperty('username');
+    expect(res.body[0]).toHaveProperty('_id');
+  });
+
   it('should return a user log on GET /api/users/:_id/logs', async () => {
     // First, add an exercise for the user
     await request(app)
