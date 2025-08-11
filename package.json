@@ -1,0 +1,30 @@
+{
+	"name": "fcc-exercise-tracker",
+	"version": "0.1.0",
+	"type": "module",
+	"author": "Guccifer808",
+	"description": "A REST API project, part of Free Code Camp's curriculum",
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js",
+		"test": "NODE_ENV=test vitest"
+	},
+	"dependencies": {
+		"cors": "^2.8.5",
+		"dotenv": "^8.2.0",
+		"express": "^4.16.4",
+		"mongoose": "^8.17.1"
+	},
+	"repository": {
+		"url": "https://github.com/Guccifer808/expense-tracker-api-freecodecamp.git"
+	},
+	"license": "MIT",
+	"keywords": [
+		"node",
+		"express"
+	],
+	"devDependencies": {
+		"supertest": "^7.1.4",
+		"vitest": "^3.2.4"
+	}
+}
